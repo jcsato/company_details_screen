@@ -1,0 +1,54 @@
+.world-screen .topbar-options-module .l-company-details-button
+{
+    top: 0.3rem;
+    left: 23.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}
+
+.world-screen .topbar-options-module .l-camp-button
+{
+    top: 0.3rem;
+    left: 27.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}
+
+.world-screen .topbar-options-module .l-perks-button
+{
+    top: 0.3rem;
+    left: 31.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}
+
+.world-screen .topbar-options-module .l-obituary-button
+{
+    top: 0.3rem;
+    left: 35.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}
+
+.world-screen .topbar-options-module .l-relations-button
+{
+    top: 0.3rem;
+    left: 39.0rem;
+    bottom: 0;
+    width: 4.5rem;
+    height: 4.1rem;
+    position: absolute;
+    margin: auto 0;
+}

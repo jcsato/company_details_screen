@@ -10,6 +10,7 @@ A mod for the game Battle Brothers ([Steam](https://store.steampowered.com/app/3
 -   [Uninstallation](#uninstallation)
 -   [Compatibility](#compatibility)
 -   [Building](#building)
+-   [Acknowledgements](#acknowledgements)
 
 ## Features
 
@@ -44,7 +45,7 @@ New and modded ambitions should also be supported out of the box, albeit not qui
 
 Again, mod authors can manually set an ambition title if they don't wish to fall back on the id naming behavior. This can be done by loading their mod after this one and pushing a new object with the format `{ ID = <ambition_id>, Title = "Descriptor of ambition" }` into the `::CDS.ambitions` table.
 
-### Building
+## Building
 
 To build, run the appropriate `build.bat` script. This will automatically compile and zip up the mod and put it in the `dist/` directory, as well as print out compile errors if there are any. The zip behavior requires Powershell / .NET to work - no reason you couldn't sub in 7-zip or another compression utility if you know how, though.
 
@@ -53,3 +54,7 @@ Note that the build script references the modkit directory, so you'll need to ed
 After building, you can easily install the mod with the appropriate `install.bat` script. This will take any existing versions of the mod already in your data directory, append a timestamp to the filename, and move them to an `old_versions/` directory in the mod folder; then it will take the built `.zip` in `dist/` and move it to the data directory.
 
 Note that the install script references your data directory, so you'll need to edit it to point to that before you can use it.
+
+## Acknowledgements
+
+Thanks to the BB Modding Discord, and especially TaroEld, for helping with getting the UI and ambition-id-to-name functionality added.

@@ -1,8 +1,8 @@
 @echo off
 
-set modname=company_details_screen
-set modkitdir=YOUR_MODKIT_BIN_PATH
-set version=1.0
+for /f "eol=[ delims=" %%a in (ini.cfg) do (
+    set "%%a"
+)
 
 echo.
 echo Creating temporary directory...
@@ -13,9 +13,9 @@ xcopy "%~dp0\scripts\" "%~dp0\tmp_scripts\" /i /e /y
 xcopy "%~dp0\script_hooks\" "%~dp0\tmp_script_hooks\" /i /e /y
 xcopy "%~dp0\ui\" "%~dp0\tmp_ui\" /i /e /y
 
-cd "%modkitdir%"
-CALL "%modkitdir%\masscompile.bat" "%~dp0\tmp_scripts"
-CALL "%modkitdir%\masscompile.bat" "%~dp0\tmp_script_hooks"
+cd "%modkitpath%"
+CALL "%modkitpath%\masscompile.bat" "%~dp0\tmp_scripts"
+CALL "%modkitpath%\masscompile.bat" "%~dp0\tmp_script_hooks"
 
 REM %~dp0 refers to the drive letter + path of where THIS batch file lives
 

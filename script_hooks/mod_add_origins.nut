@@ -6,13 +6,15 @@
 		create();
 
 		local imageString = getDescription();
-		imageString = imageString.slice(imageString.find("[img]gfx/") + "[img]gfx/".len());
-		imageString = imageString.slice(0, imageString.find("[/img]"));
+		local imageStringStartIndex = imageString.find("[img]gfx/");
 
-		::CDS.origins.push({
-			ID = getID(),
-			Name = getName(),
-			Image = imageString
-		});
+		if (imageStringStartIndex != null) {
+			imageString = imageString.slice(imageStringStartIndex + "[img]gfx/".len());
+			imageString = imageString.slice(0, imageString.find("[/img]"));
+		} else {
+			imageString = "ui/events/event_80.png";
+		}
+
+		::CDS.origins.push({ ID = getID(), Name = getName(), Image = imageString });
 	});
 });

@@ -16,7 +16,7 @@
 				m.WorldScreen.show();
 				Cursor.setCursor(Const.UI.Cursor.Hand);
 				setAutoPause(false);
-			}, function() { return !m.RelationsScreen.isAnimating(); }
+			}, function() { return !m.CompanyDetailsScreen.isAnimating(); }
 		);
 	}
 

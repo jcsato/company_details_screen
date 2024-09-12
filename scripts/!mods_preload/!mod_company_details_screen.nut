@@ -1,4 +1,4 @@
-::mods_registerMod("company_details_mod", 1.1, "Sato's Company Details Screen");
+::mods_registerMod("company_details_mod", 1.2, "Sato's Company Details Screen");
 
 ::mods_queue("company_details_mod", null, function() {
 	::mods_registerCSS("screens/world/world_company_details_screen.css");

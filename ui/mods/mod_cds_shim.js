@@ -16,31 +16,31 @@ TooltipIdentifier.WorldScreen.CompanyDetails =  {
 // world_screen_topbar_options_module.js
 WorldScreenTopbarOptionsModule.prototype.mCompanyDetailsButton = null;
 
-var originalWorldScreenTopbarOptionsModuleCreateDIV = WorldScreenTopbarOptionsModule.prototype.createDIV;
+var originalCreateDIVCDS = WorldScreenTopbarOptionsModule.prototype.createDIV;
 WorldScreenTopbarOptionsModule.prototype.createDIV = function(_parentDiv) {
-    originalWorldScreenTopbarOptionsModuleCreateDIV.call(this, _parentDiv)
+    originalCreateDIVCDS.call(this, _parentDiv)
 
     var self = this;
 
-    var layout = $('<div class="l-company-details-button"/>');
-    this.mContainer.append(layout);
-    this.mCompanyDetailsButton = layout.createImageButton(Path.GFX + Asset.ICON_COMPANY_DETAILS, function() {
+    var parent = this.mQuitButton.parent();
+    this.mCompanyDetailsButton = parent.createImageButton(Path.GFX + Asset.ICON_COMPANY_DETAILS, function() {
         self.notifyBackendCompanyDetailsButtonPressed();
-    }, '', 6);
+    }, 'l-company-details-button l-image-button', 6);
+    this.mQuitButton.before(this.mCompanyDetailsButton);
 }
 
-var originalWorldScreenTopbarOptionsModuleBindTooltips = WorldScreenTopbarOptionsModule.prototype.bindTooltips;
+var originalBindTooltipsCDS = WorldScreenTopbarOptionsModule.prototype.bindTooltips;
 WorldScreenTopbarOptionsModule.prototype.bindTooltips = function() {
     this.mCompanyDetailsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.OptionsModule.CompanyDetailsButton });
 
-    originalWorldScreenTopbarOptionsModuleBindTooltips.call(this);
+    originalBindTooltipsCDS.call(this);
 }
 
-var originalWorldScreenTopbarOptionsModuleUnbindTooltips = WorldScreenTopbarOptionsModule.prototype.unbindTooltips;
+var originalUnbindTooltipsCDS = WorldScreenTopbarOptionsModule.prototype.unbindTooltips;
 WorldScreenTopbarOptionsModule.prototype.unbindTooltips = function() {
     this.mCompanyDetailsButton.unbindTooltip();
 
-    originalWorldScreenTopbarOptionsModuleUnbindTooltips.call(this);
+    originalUnbindTooltipsCDS.call(this);
 }
 
 WorldScreenTopbarOptionsModule.prototype.notifyBackendCompanyDetailsButtonPressed = function() {
